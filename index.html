@@ -114,7 +114,7 @@
         }
 
         .hero {
-            padding: 86px 0 72px;
+            padding: 68px 0 56px;
             overflow: hidden
         }
 
@@ -172,7 +172,7 @@
         }
 
         .section {
-            padding: 88px 0
+            padding: 64px 0
         }
 
         .light {
@@ -193,11 +193,16 @@
             color: #71877D
         }
 
+        .grid4,
         .grid3,
         .grid2 {
             display: grid;
             gap: 18px;
-            margin-top: 42px
+            margin-top: 30px
+        }
+
+        .grid4 {
+            grid-template-columns: repeat(4, 1fr)
         }
 
         .grid3 {
@@ -216,13 +221,24 @@
             box-shadow: 0 10px 28px rgba(82, 123, 104, .06)
         }
 
+        #pourquoi .card,
+        #modes .card {
+            padding: 10px 18px 12px
+        }
+
+        #pourquoi .card h3,
+        #modes .card h3 {
+            margin: 8px 0 6px
+        }
+
         .card .icon {
             font-size: 28px
         }
 
         .card h3 {
             margin: 15px 0 8px;
-            font-size: 20px
+            font-size: 20px;
+            color: #29483B
         }
 
         .mode-title {
@@ -232,8 +248,16 @@
             color: #29483B
         }
 
-        .mode-title .icon {
+        .mode-title .icon,
+        .situation-title .icon {
             line-height: 1
+        }
+
+        .situation-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #29483B
         }
 
         .card p {
@@ -246,7 +270,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
             align-items: start;
-            margin-top: 42px
+            margin-top: 30px
         }
 
         .app-gallery figure {
@@ -284,7 +308,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 12px;
-            margin-top: 42px
+            margin-top: 30px
         }
 
         .step {
@@ -310,7 +334,7 @@
         .split {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
             align-items: center
         }
 
@@ -337,7 +361,7 @@
 
         .cta {
             text-align: center;
-            padding: 95px 0;
+            padding: 64px 0;
             background: #F3E1D1;
             color: #29483B
         }
@@ -376,6 +400,102 @@
             font-size: 12px
         }
 
+        .official {
+            padding: 30px;
+            border: 1px solid #D9E5DE;
+            border-radius: 24px;
+            background: #EEF4EF;
+            color: #29483B
+        }
+
+        .official p {
+            margin: 0
+        }
+
+        .kit-list,
+        .app-list,
+        .source-list {
+            padding: 0;
+            margin: 22px 0;
+            list-style: none
+        }
+
+        .kit-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px
+        }
+
+        .kit-list li {
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: #FFFFFF;
+            border: 1px solid #D9E5DE;
+            font-size: 14px
+        }
+
+        .official-link {
+            display: inline-flex;
+            font-weight: 800;
+            color: #29483B;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
+        .source-note,
+        .authority-note {
+            color: #61796E;
+            font-size: 13px
+        }
+
+        .app-link {
+            padding: 30px;
+            border-radius: 24px;
+            background: #FFFDF9;
+            color: #29483B
+        }
+
+        .app-link h2 {
+            margin-top: 8px
+        }
+
+        .app-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 24px;
+            margin-bottom: 0
+        }
+
+        .app-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: 800;
+            margin-right: 8px
+        }
+
+        .sources {
+            padding-top: 36px;
+            padding-bottom: 36px
+        }
+
+        .sources h2 {
+            font-size: 22px;
+            margin-bottom: 8px
+        }
+
+        .source-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin: 12px 0 0
+        }
+
+        .source-list a {
+            color: #71877D;
+            text-decoration: underline;
+            text-underline-offset: 3px
+        }
+
         @media(max-width:820px) {
             .navlinks a:not(.btn) {
                 display: none
@@ -396,6 +516,7 @@
 
             .grid3,
             .grid2,
+            .grid4,
             .app-gallery {
                 grid-template-columns: 1fr
             }
@@ -406,6 +527,10 @@
 
             .split {
                 gap: 28px
+            }
+
+            .app-list {
+                grid-template-columns: 1fr
             }
         }
 
@@ -420,6 +545,11 @@
 
             .hero-shot {
                 width: min(280px, 100%)
+            }
+
+            .official,
+            .app-link {
+                padding: 24px
             }
         }
     </style>
@@ -450,32 +580,41 @@
             </figure>
         </div>
     </header>
+    <section id="pourquoi" class="section light">
+        <div class="wrap">
+            <div class="eyebrow">Pourquoi 72 heures ?</div>
+            <h2>Anticiper les premières heures, simplement.</h2>
+            <p class="sub">Certaines situations peuvent perturber temporairement le quotidien. Une préparation
+                adaptée aide à suivre les consignes plus sereinement, sans avoir à tout improviser.</p>
+            <div class="grid4">
+                <article class="card"><h3 class="situation-title"><span class="icon" aria-hidden="true">🔥</span>Feux de forêt</h3><p>Une évacuation peut devoir être organisée rapidement selon les consignes des autorités.</p></article>
+                <article class="card"><h3 class="situation-title"><span class="icon" aria-hidden="true">🌊</span>Inondations</h3><p>Routes impraticables, coupures et nécessité de rester à l’abri peuvent perturber fortement le quotidien.</p></article>
+                <article class="card"><h3 class="situation-title"><span class="icon" aria-hidden="true">🌬️</span>Tempêtes</h3><p>Des coupures d’électricité ou de communications et des difficultés de déplacement peuvent survenir.</p></article>
+                <article class="card"><h3 class="situation-title"><span class="icon" aria-hidden="true">⚠️</span>Crise majeure</h3><p>Certaines situations peuvent nécessiter de rester chez soi ou de partir rapidement selon les consignes des autorités.</p></article>
+            </div>
+            <p class="bigquote">Se préparer, c’est simplement anticiper ces premières heures plutôt que devoir improviser.</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="wrap">
+            <div class="official">
+                <div class="eyebrow">Recommandation officielle</div>
+                <h2>La recommandation officielle : 72 h</h2>
+                <p>La Sécurité civile recommande de préparer un kit d’urgence permettant d’être autonome pendant 3 jours. Il peut être utile aussi bien pour rester chez soi dans l’attente des secours que lors d’un départ précipité.</p>
+                <ul class="kit-list" aria-label="Exemples pour un kit d'urgence"><li>Eau potable</li><li>Nourriture non périssable</li><li>Radio</li><li>Éclairage</li><li>Premiers secours</li><li>Chargeur de téléphone</li><li>Documents essentiels</li><li>Argent liquide</li><li>Vêtements chauds</li><li>Double des clés</li></ul>
+                <p>Les autorités recommandent également de vérifier régulièrement le contenu du kit et les dates de péremption.</p>
+                <p style="margin-top:20px"><a class="official-link" href="https://www.securite-civile.interieur.gouv.fr/reagir/comment-se-preparer-face-aux-risques/kit-durgence" target="_blank" rel="noopener noreferrer">Consulter les recommandations de la Sécurité civile</a></p>
+                <p class="source-note" style="margin-top:10px">Source : Sécurité civile – Ministère de l’Intérieur</p>
+            </div>
+        </div>
+    </section>
     <section id="projet" class="section light">
         <div class="wrap">
-            <div class="eyebrow">Pourquoi 72 Heures ?</div>
-            <h2>Se préparer ne devrait pas être compliqué.</h2>
-            <p class="sub">Acheter quelques réserves est facile. Savoir ce qu’il manque, où cela se trouve, ce qui
-                arrive à expiration et si le foyer est réellement préparé l’est beaucoup moins. 72 Heures transforme
-                cette gestion fastidieuse en un suivi simple et concret.</p>
-            <div class="grid3">
-                <article class="card">
-                    <div class="icon">🏠</div>
-                    <h3>Deux préparations distinctes</h3>
-                    <p>Le stock conservé à domicile et le sac d’évacuation répondent à des contraintes différentes. 72
-                        Heures les suit séparément.</p>
-                </article>
-                <article class="card">
-                    <div class="icon">📊</div>
-                    <h3>Voir ce qui manque</h3>
-                    <p>L’application compare les besoins de votre foyer avec les produits réellement présents dans vos
-                        réserves.</p>
-                </article>
-                <article class="card">
-                    <div class="icon">⏳</div>
-                    <h3>Maintenir dans le temps</h3>
-                    <p>Quantités, lots et dates de péremption permettent de ne pas oublier un stock constitué des mois
-                        auparavant.</p>
-                </article>
+            <div class="app-link">
+                <div class="eyebrow">Le rôle de 72 Heures</div>
+                <h2>Préparer un kit est une première étape. Le maintenir dans le temps en est une autre.</h2>
+                <p class="sub">72 Heures aide à organiser cette préparation personnelle et familiale :</p>
+                <ul class="app-list"><li>adapter les besoins à la composition du foyer ;</li><li>distinguer ce qui reste à domicile de ce qui doit être prêt à emporter ;</li><li>connaître les quantités disponibles ;</li><li>suivre les dates de péremption ;</li><li>identifier ce qui manque ;</li><li>estimer l’autonomie alimentaire ;</li><li>maintenir progressivement sa préparation.</li></ul>
             </div>
         </div>
     </section>
@@ -486,7 +625,7 @@
             <div class="app-gallery">
                 <figure><img src="assets/Accueil.jpeg"
                         alt="Écran Accueil de 72 Heures visualisant le niveau de préparation" loading="lazy">
-                    <figcaption><strong>Accueil</strong><span>Visualisez votre niveau de préparation.</span>
+                    <figcaption><strong>Accueil</strong><span>Visualisez votre préparation et les priorités restantes.</span>
                     </figcaption>
                 </figure>
                 <figure><img src="assets/Besoins.jpeg"
@@ -497,7 +636,7 @@
                 </figure>
                 <figure><img src="assets/Stock.jpeg"
                         alt="Écran Stock de 72 Heures pour ajouter et maintenir les réserves" loading="lazy">
-                    <figcaption><strong>Stock</strong><span>Ajoutez et maintenez vos réserves.</span></figcaption>
+                    <figcaption><strong>Stock</strong><span>Ajoutez vos réserves et suivez leur péremption.</span></figcaption>
                 </figure>
             </div>
         </div>
@@ -510,16 +649,15 @@
                 qui doit pouvoir être emporté.</p>
             <div class="grid2">
                 <article class="card">
-                    <h3 class="mode-title"><span class="icon" aria-hidden="true">🏠</span>À domicile</h3>
-                    <p>Préparez votre foyer pour 3 jours, 3 semaines ou 3 mois : eau, alimentation, énergie, éclairage,
-                        hygiène, communication et plus encore.</p>
+                    <h3 class="mode-title"><span class="icon" aria-hidden="true">🏠</span>Rester à domicile</h3>
+                    <p>Préparez une autonomie progressive lorsque les déplacements ou certains réseaux sont perturbés : 3 jours, 3 semaines ou 3 mois.</p>
                 </article>
                 <article class="card">
-                    <h3 class="mode-title"><span class="icon" aria-hidden="true">🎒</span>Évacuation</h3>
-                    <p>Constituez une préparation dédiée à 72 heures, séparée du domicile, avec le sac et les
-                        équipements essentiels à emporter.</p>
+                    <h3 class="mode-title"><span class="icon" aria-hidden="true">🎒</span>Devoir partir</h3>
+                    <p>Préparez séparément les éléments essentiels à emporter pour 72 heures si une évacuation est demandée.</p>
                 </article>
             </div>
+            <p class="authority-note">Les consignes des autorités priment toujours.</p>
         </div>
     </section>
     <section id="fonctionnement" class="section">
