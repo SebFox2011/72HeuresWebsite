@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://72heures.eu/</loc>
-  </url>
-  <url>
-    <loc>https://72heures.eu/soutenir/</loc>
-  </url>
-  <url>
-    <loc>https://72heures.eu/confidentialite/</loc>
-  </url>
-  <url>
-    <loc>https://72heures.eu/suppression-compte/</loc>
-  </url>
+  <url><loc>https://72heures.eu/</loc></url>
+  <url><loc>https://72heures.eu/soutenir/</loc></url>
+  <url><loc>https://72heures.eu/confidentialite/</loc></url>
+  <url><loc>https://72heures.eu/suppression-compte/</loc></url>
+  <url><loc>https://72heures.eu/reset-password/</loc></url>
+  <url><loc>https://72heures.eu/blog/</loc></url>
+  <url><loc>https://72heures.eu/blog/preparer-kit-urgence-familial/</loc></url>
 </urlset>
