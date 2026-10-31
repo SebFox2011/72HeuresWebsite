@@ -14,7 +14,15 @@ Le site est statique : aucun build, Jekyll, Ruby ou dépendance n’est nécessa
 
 ## Publicité et consentement
 
-Les conteneurs `ad-slot` sont des emplacements vides identifiés dans le HTML. Aucun script publicitaire n’est chargé. N’ajoutez AdSense qu’après validation du compte et branchez son chargement à un mécanisme de consentement conforme aux règles applicables. Ne chargez aucun traceur avant le consentement requis.
+Les conteneurs `ad-slot` identifiés par `id` et `data-ad-placement` sont prévus sur la liste du blog et à deux endroits de l’article. Vides, ils sont masqués et n’ajoutent aucun espace à la page. Aucun script AdSense ni identifiant publicitaire n’est présent. Les identifiants de placement servent uniquement à repérer les emplacements dans le HTML ; ils ne sont pas des `data-ad-slot` Google.
+
+Avant toute activation :
+
+1. Obtenez l’approbation du site et les vrais identifiants éditeur (`ca-pub-…`) et de chaque bloc AdSense. Ne mettez aucune valeur fictive dans le dépôt.
+2. Choisissez et configurez une CMP conforme aux exigences applicables, notamment la prise en charge du consentement requis pour les visiteurs concernés. Publiez les informations de confidentialité et les choix de consentement nécessaires.
+3. Ajoutez le script AdSense et le balisage officiel des blocs uniquement après avoir les identifiants réels. Chargez et initialisez les annonces seulement après le signal de consentement approprié de la CMP ; respectez aussi le retrait du consentement et les règles de Google. La CMP doit gérer le consentement, pas une bannière maison.
+4. Vérifiez que chaque bloc est associé au bon emplacement (`blog-after-intro`, `article-after-intro`, `article-mid-content`), qu’il reste fluide sur mobile et qu’aucun espace vide ne subsiste si aucune annonce n’est servie. N’initialisez pas un bloc avant consentement.
+5. Contrôlez en production le chargement réseau, l’affichage mobile et ordinateur, ainsi que les parcours d’accord et de refus/retrait avant d’activer les annonces pour les visiteurs.
 
 ## Vérifier avant publication
 
