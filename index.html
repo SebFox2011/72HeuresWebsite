@@ -3,6 +3,32 @@
 
 <head>
   <meta name="google-adsense-account" content="ca-pub-5025472355802912">
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push({
+      CONSENT_API_READY: () => {
+        const setupLink = () => {
+          const link = document.getElementById('privacy-settings-link');
+          if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
+          link.hidden = false;
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.googlefc.showRevocationMessage();
+          });
+          if (window.location.hash === '#privacy-settings') {
+            window.googlefc.showRevocationMessage();
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupLink, { once: true });
+        } else {
+          setupLink();
+        }
+      }
+    });
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5025472355802912" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>72 Heures — Kit d’urgence 72 h et autonomie familiale</title>
@@ -817,26 +843,6 @@
                 pas aux consignes des autorités ni aux services de secours.</div>
         </div>
     </footer>
-    <script>
-        (() => {
-            window.googlefc = window.googlefc || {};
-            window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-            window.googlefc.callbackQueue.push({
-                CONSENT_API_READY: () => {
-                    const link = document.getElementById('privacy-settings-link');
-                    if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
-                    link.hidden = false;
-                    link.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        window.googlefc.showRevocationMessage();
-                    });
-                    if (window.location.hash === '#privacy-settings') {
-                        window.googlefc.showRevocationMessage();
-                    }
-                }
-            });
-        })();
-    </script>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNavigation = document.querySelector('#main-navigation');

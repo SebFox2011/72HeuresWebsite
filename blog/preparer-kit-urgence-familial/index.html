@@ -2,6 +2,32 @@
 <html lang="fr">
 <head>
   <meta name="google-adsense-account" content="ca-pub-5025472355802912">
+  <script>
+    window.googlefc = window.googlefc || {};
+    window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+    window.googlefc.callbackQueue.push({
+      CONSENT_API_READY: () => {
+        const setupLink = () => {
+          const link = document.getElementById('privacy-settings-link');
+          if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
+          link.hidden = false;
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.googlefc.showRevocationMessage();
+          });
+          if (window.location.hash === '#privacy-settings') {
+            window.googlefc.showRevocationMessage();
+          }
+        };
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupLink, { once: true });
+        } else {
+          setupLink();
+        }
+      }
+    });
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5025472355802912" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Kit d’urgence 72 heures : comment préparer sa famille ? | 72 Heures</title>
@@ -35,25 +61,5 @@
     <section class="related" aria-labelledby="related-title"><h2 id="related-title">Articles similaires</h2><ul><li><a href="/#modes">Préparer son foyer à domicile ou en cas d’évacuation</a><span>Découvrir les modes de préparation de 72 Heures</span></li><li><a href="/blog/">Voir tous les articles du blog 72 Heures</a><span>Conseils de préparation familiale</span></li></ul></section>
   </article></main>
   <footer class="site-footer"><div class="site-nav"><a class="brand" href="/"><b>72</b> HEURES</a><span>© 2026 • 72heures.eu</span><a href="/confidentialite/">Confidentialité</a><a href="/suppression-compte/">Suppression du compte</a><a id="privacy-settings-link" href="#privacy-settings" hidden>Gérer mes choix de confidentialité</a></div><p>Les consignes des autorités priment toujours. <a href="/">Découvrir 72 Heures</a></p></footer>
-  <script>
-    (() => {
-      window.googlefc = window.googlefc || {};
-      window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
-      window.googlefc.callbackQueue.push({
-        CONSENT_API_READY: () => {
-          const link = document.getElementById('privacy-settings-link');
-          if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
-          link.hidden = false;
-          link.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.googlefc.showRevocationMessage();
-          });
-          if (window.location.hash === '#privacy-settings') {
-            window.googlefc.showRevocationMessage();
-          }
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
