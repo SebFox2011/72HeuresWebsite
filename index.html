@@ -812,10 +812,31 @@
             <div><strong>72 Heures</strong><br>Autonomie familiale</div>
             <div>© 2026 • 72heures.eu</div>
             <div><a href="/confidentialite/">Confidentialité</a> · <a href="/suppression-compte/">Suppression du compte</a></div>
+            <div><a id="privacy-settings-link" href="#privacy-settings" hidden>Gérer mes choix de confidentialité</a></div>
             <div>72 Heures est une application d'aide à la préparation personnelle et familiale. Elle ne se substitue
                 pas aux consignes des autorités ni aux services de secours.</div>
         </div>
     </footer>
+    <script>
+        (() => {
+            window.googlefc = window.googlefc || {};
+            window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+            window.googlefc.callbackQueue.push({
+                CONSENT_API_READY: () => {
+                    const link = document.getElementById('privacy-settings-link');
+                    if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
+                    link.hidden = false;
+                    link.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        window.googlefc.showRevocationMessage();
+                    });
+                    if (window.location.hash === '#privacy-settings') {
+                        window.googlefc.showRevocationMessage();
+                    }
+                }
+            });
+        })();
+    </script>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const mainNavigation = document.querySelector('#main-navigation');

@@ -14,15 +14,18 @@ Le site est statique : aucun build, Jekyll, Ruby ou dépendance n’est nécessa
 
 ## Publicité et consentement
 
-Les conteneurs `ad-slot` identifiés par `id` et `data-ad-placement` sont prévus sur la liste du blog et à deux endroits de l’article. Vides, ils sont masqués et n’ajoutent aucun espace à la page. Aucun script AdSense ni identifiant publicitaire n’est présent. Les identifiants de placement servent uniquement à repérer les emplacements dans le HTML ; ils ne sont pas des `data-ad-slot` Google.
+Les conteneurs `ad-slot` identifiés par `id` et `data-ad-placement` sont prévus sur la liste du blog et à deux endroits de l’article. Vides, ils sont masqués et n’ajoutent aucun espace à la page. Aucun script AdSense ni unité publicitaire n’est présent. Les identifiants de placement servent uniquement à repérer les emplacements dans le HTML ; ils ne sont pas des `data-ad-slot` Google.
+
+Le message CMP Google est publié dans AdSense, mais il ne s’affichera pas sur le site tant que le tag officiel AdSense/Privacy & messaging ne sera pas intégré. Le lien « Gérer mes choix de confidentialité » est raccordé à l’API documentée `googlefc.showRevocationMessage()` via `googlefc.callbackQueue` sur l’accueil et les pages du blog ; il reste masqué tant que l’API CMP n’est pas disponible. La politique de confidentialité ne charge aucun tag CMP ni publicitaire et son lien redirige vers l’accueil, qui rouvrira le message si l’API est chargée.
 
 Avant toute activation :
 
-1. Obtenez l’approbation du site et les vrais identifiants éditeur (`ca-pub-…`) et de chaque bloc AdSense. Ne mettez aucune valeur fictive dans le dépôt.
-2. Choisissez et configurez une CMP conforme aux exigences applicables, notamment la prise en charge du consentement requis pour les visiteurs concernés. Publiez les informations de confidentialité et les choix de consentement nécessaires.
-3. Ajoutez le script AdSense et le balisage officiel des blocs uniquement après avoir les identifiants réels. Chargez et initialisez les annonces seulement après le signal de consentement approprié de la CMP ; respectez aussi le retrait du consentement et les règles de Google. La CMP doit gérer le consentement, pas une bannière maison.
-4. Vérifiez que chaque bloc est associé au bon emplacement (`blog-after-intro`, `article-after-intro`, `article-mid-content`), qu’il reste fluide sur mobile et qu’aucun espace vide ne subsiste si aucune annonce n’est servie. N’initialisez pas un bloc avant consentement.
-5. Contrôlez en production le chargement réseau, l’affichage mobile et ordinateur, ainsi que les parcours d’accord et de refus/retrait avant d’activer les annonces pour les visiteurs.
+1. Attendez l’approbation du site AdSense. Dans AdSense, vérifiez que les annonces automatiques sont désactivées tant que vous ne souhaitez pas diffuser d’annonces.
+2. Vérifiez dans Privacy & messaging que le message réglementaire cible `72heures.eu`, que son URL de politique de confidentialité est correcte et que les partenaires/finalités correspondent aux traitements réellement utilisés.
+3. Après approbation seulement, ajoutez le code AdSense officiel fourni pour le compte réel (`ca-pub-5025472355802912`) dans le `<head>` des pages où la CMP doit apparaître. Ce tag permet le déploiement du message ; ne créez ni ne remplissez de bloc publicitaire avant d’avoir décidé d’activer les annonces.
+4. Quand les annonces sont autorisées, créez les blocs dans AdSense et renseignez leurs vrais identifiants dans des unités adaptées aux emplacements (`blog-after-intro`, `article-after-intro`, `article-mid-content`). Ne mettez aucune valeur fictive dans le dépôt.
+5. Chargez les annonces seulement lorsque l’approbation est effective et que les règles/choix CMP applicables sont respectés. Conservez le lien officiel de révocation via `googlefc.showRevocationMessage()` ; n’ajoutez pas de bannière personnalisée ni de script de test en production.
+6. Testez dans un navigateur le message CMP (y compris avec les paramètres de prévisualisation officiels), son lien de réouverture, les choix et leur retrait, le réseau, les refus, l’absence d’annonce sans unité activée, et l’affichage responsive avant toute mise en service.
 
 ## Vérifier avant publication
 

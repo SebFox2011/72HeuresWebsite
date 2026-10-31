@@ -23,6 +23,26 @@
     </section>
     <aside class="app-cta"><h2>Suivre les besoins de votre foyer</h2><p>72 Heures aide à organiser les réserves familiales, les besoins et les dates importantes.</p><a href="/#projet">Découvrir l’application 72 Heures</a></aside>
   </main>
-  <footer class="site-footer"><div class="site-nav"><a class="brand" href="/"><b>72</b> HEURES</a><span>© 2026 • 72heures.eu</span><a href="/confidentialite/">Confidentialité</a></div><p>Les consignes des autorités priment toujours. <a href="/">Découvrir 72 Heures</a></p></footer>
+  <footer class="site-footer"><div class="site-nav"><a class="brand" href="/"><b>72</b> HEURES</a><span>© 2026 • 72heures.eu</span><a href="/confidentialite/">Confidentialité</a><a id="privacy-settings-link" href="#privacy-settings" hidden>Gérer mes choix de confidentialité</a></div><p>Les consignes des autorités priment toujours. <a href="/">Découvrir 72 Heures</a></p></footer>
+  <script>
+    (() => {
+      window.googlefc = window.googlefc || {};
+      window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+      window.googlefc.callbackQueue.push({
+        CONSENT_API_READY: () => {
+          const link = document.getElementById('privacy-settings-link');
+          if (!link || typeof window.googlefc.showRevocationMessage !== 'function') return;
+          link.hidden = false;
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.googlefc.showRevocationMessage();
+          });
+          if (window.location.hash === '#privacy-settings') {
+            window.googlefc.showRevocationMessage();
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
