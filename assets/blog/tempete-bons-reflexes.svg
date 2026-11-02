@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Une famille se protège à l’abri pendant une tempête</title>
+  <desc id="desc">Maison solide éclairée et famille réunie à l’intérieur, sous un ciel venteux avec des arbres inclinés et des nuages de pluie.</desc>
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#183a4b"/><stop offset="1" stop-color="#66808a"/></linearGradient><linearGradient id="window" x2="0" y2="1"><stop stop-color="#ffe5a0"/><stop offset="1" stop-color="#eab66a"/></linearGradient></defs>
+  <rect width="1200" height="630" rx="32" fill="url(#sky)"/>
+  <circle cx="1045" cy="105" r="64" fill="#dfe6dd" opacity=".12"/>
+  <path d="M690 123c31-57 110-60 142-18 43-30 107-7 112 42 53 4 67 72 19 94H687c-55-20-49-96 3-118z" fill="#d7e0dc" opacity=".78"/>
+  <path d="M843 259 833 299m57-35-10 42m59-45-8 36" stroke="#adc6c8" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+  <path d="M64 324c104-64 192-52 281-9m-264 38c100-42 176-32 256-1m531-14c67-38 135-40 219-12m-198 45c71-24 130-21 190-2" fill="none" stroke="#c2d5d2" stroke-width="5" stroke-linecap="round" opacity=".42"/>
+  <path d="M0 458c159-53 270-19 410-49 148-32 251-16 392 29 137 44 270 7 398-31v223H0z" fill="#264b50"/>
+  <!-- wind-bent trees -->
+  <g fill="none" stroke-linecap="round"><path d="M198 482q-8-105-29-164m21 81q-47-43-72-91m82 67q42-43 78-57" stroke="#684c3a" stroke-width="15"/><path d="M163 322q-58-37-93-13m105 25q-27-66-10-99m59 114q49-56 100-51" stroke="#527b65" stroke-width="29"/><path d="M1081 486q4-100 30-159m-18 78q49-45 76-87m-89 69q-39-42-76-52" stroke="#684c3a" stroke-width="15"/><path d="M1110 332q55-40 84-17m-106 24q25-66 5-100m-57 116q-50-53-98-45" stroke="#527b65" stroke-width="29"/></g>
+  <!-- protected home -->
+  <g transform="translate(365 197)">
+    <path d="M52 176 278 20l231 156v276H52z" fill="#eee9db"/><path d="M14 182 278 0l267 182-23 35L278 48 38 217z" fill="#cc8154"/>
+    <path d="M109 242h138v210H109z" fill="#315766"/><path d="M127 259h102v175H127z" fill="url(#window)"/><path d="M281 219h157v112H281z" fill="#355967"/><path d="M299 237h121v76H299z" fill="url(#window)"/>
+    <path d="M178 260v173m-51-88h102m70-71v76m-18-38h121" stroke="#faf0d6" stroke-width="6" opacity=".9"/>
+    <path d="M266 452h29V336h-29z" fill="#c4b8a4"/><path d="M256 334h49v15h-49z" fill="#9b6346"/>
+    <!-- silhouettes inside -->
+    <circle cx="160" cy="305" r="13" fill="#76513c"/><path d="M141 327q19-17 38 0v51h-38z" fill="#cb7254"/><circle cx="198" cy="319" r="10" fill="#74533f"/><path d="M183 338q15-13 30 0v40h-30z" fill="#658d78"/>
+    <path d="M126 452h110" stroke="#b98556" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial,sans-serif" fill="#f7f3e9"><text x="66" y="111" font-size="18" font-weight="700" letter-spacing="3">72 HEURES · PRÉPARATION FAMILIALE</text><text x="66" y="174" font-size="40" font-weight="700">À l’abri, ensemble.</text><text x="66" y="216" font-size="20" fill="#d5e1db">Les bons réflexes</text><text x="66" y="245" font-size="20" fill="#d5e1db">avant, pendant, après.</text></g>
+  <path d="M67 279h96" stroke="#e9a45d" stroke-width="5" stroke-linecap="round"/>
+</svg>
