@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>72 Heures — Kit d’urgence 72 h et autonomie familiale</title>
     <meta name="description"
-        content="72 Heures aide les foyers à préparer et maintenir leurs réserves essentielles, à domicile comme en évacuation. Bientôt disponible gratuitement sur iOS et Android.">
+        content="72 Heures aide les foyers à préparer et maintenir leurs réserves essentielles, à domicile comme en évacuation. Disponible sur iOS, Android bientôt disponible.">
     <link rel="canonical" href="https://72heures.eu/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="72 Heures — Kit d’urgence 72 h et autonomie familiale">
@@ -234,6 +234,60 @@
             gap: 12px;
             flex-wrap: wrap;
             margin-top: 30px
+        }
+
+        .download-block {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 14px;
+            margin-top: 16px
+        }
+
+        .download-qr {
+            display: block;
+            flex: 0 0 120px;
+            padding: 5px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .12)
+        }
+
+        .download-qr img {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+        .download-qr:focus-visible,
+        .download-link:focus-visible {
+            outline: 3px solid #29483B;
+            outline-offset: 4px
+        }
+
+        .download-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px
+        }
+
+        .download-link {
+            min-height: 42px;
+            padding: 10px 14px;
+            border-radius: 9px;
+            background: #111;
+            color: #fff;
+            font-size: 14px
+        }
+
+        .download-block .android-status {
+            font-size: 12px
+        }
+
+        .android-status {
+            color: var(--muted);
+            font-size: 13px
         }
 
         .app-visual {
@@ -643,6 +697,16 @@
             }
         }
 
+        @media(max-width:767px) {
+            .download-block {
+                margin-top: 14px
+            }
+
+            .download-qr {
+                display: none
+            }
+        }
+
         @media(max-width:480px) {
             .wrap {
                 padding: 0 18px
@@ -684,8 +748,18 @@
                     réserves essentielles, à domicile comme dans votre sac d’évacuation.</p>
                 <div class="actions"><a class="btn" href="#projet">Découvrir le projet</a><a class="btn secondary"
                         href="#fonctionnalites">Voir les fonctionnalités</a></div>
-                <p style="margin-top:24px"><span class="badge">Bientôt disponible • iOS &amp; Android</span></p>
-                <p class="status">Une première version gratuite sera disponible sur l’App Store et Google Play.</p>
+                <div class="download-block" aria-label="Télécharger 72 Heures">
+                    <a class="download-qr" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
+                        target="_blank" rel="noopener noreferrer" aria-label="Ouvrir l’App Store avec le QR code de 72 Heures">
+                        <img src="assets/72heures-appstore-qr.svg"
+                            alt="QR code pour télécharger 72 Heures sur l’App Store">
+                    </a>
+                    <div class="download-details">
+                        <a class="btn download-link" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
+                            target="_blank" rel="noopener noreferrer">Télécharger sur l’App Store</a>
+                        <span class="android-status">Android — Bientôt disponible</span>
+                    </div>
+                </div>
             </div>
             <figure class="app-visual"><img class="hero-shot" src="assets/Accueil.jpeg"
                     alt="Écran d'accueil de l'application 72 Heures montrant le niveau de préparation du foyer">
@@ -828,8 +902,10 @@
     </section>
     <section id="suivre" class="cta">
         <div class="wrap">
-            <h2>72 Heures arrive bientôt sur iOS et Android</h2>
-            <p>Une première version gratuite est en préparation pour l’App Store et Google Play.</p>
+            <h2>72 Heures est disponible sur iOS</h2>
+            <p><a class="btn" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
+                target="_blank" rel="noopener noreferrer">Télécharger sur l’App Store</a></p>
+            <p class="android-status" style="margin-top:12px">Android — Bientôt disponible</p>
         </div>
     </section>
     </main>
