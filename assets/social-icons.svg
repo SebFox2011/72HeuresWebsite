@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="youtube" viewBox="0 0 24 24">
+    <path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/>
+    <path fill="#fff" d="m9.6 15.6 6.2-3.6-6.2-3.6v7.2Z"/>
+  </symbol>
+  <symbol id="facebook" viewBox="0 0 24 24">
+    <path fill="#0866FF" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.96h-1.513c-1.491 0-1.955.928-1.955 1.88v2.26h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/>
+  </symbol>
+  <symbol id="instagram" viewBox="0 0 24 24">
+    <defs>
+      <linearGradient id="instagram-gradient" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFDC80"/><stop offset=".5" stop-color="#F56040"/><stop offset="1" stop-color="#C13584"/>
+      </linearGradient>
+    </defs>
+    <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#instagram-gradient)"/>
+    <rect x="6.2" y="6.2" width="11.6" height="11.6" rx="3.3" fill="none" stroke="#fff" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="2.8" fill="none" stroke="#fff" stroke-width="1.8"/>
+    <circle cx="17.25" cy="6.85" r="1.1" fill="#fff"/>
+  </symbol>
+</svg>
