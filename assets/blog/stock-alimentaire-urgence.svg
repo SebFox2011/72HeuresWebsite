@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Organiser un stock alimentaire d’urgence</title>
+  <desc id="desc">Étagères rangées avec des conserves, des bocaux et des aliments secs pour une réserve familiale à domicile.</desc>
+  <rect width="1200" height="630" rx="28" fill="#103434"/>
+  <circle cx="900" cy="315" r="250" fill="#174542"/>
+  <rect x="310" y="118" width="620" height="402" rx="20" fill="#f4f1e8"/>
+  <path d="M335 250h570M335 382h570" stroke="#8eaa9a" stroke-width="18"/>
+  <rect x="375" y="166" width="100" height="80" rx="13" fill="#e99a50"/>
+  <rect x="492" y="151" width="110" height="95" rx="12" fill="#c7d7cd"/>
+  <rect x="620" y="172" width="82" height="74" rx="12" fill="#e99a50"/>
+  <rect x="719" y="158" width="148" height="88" rx="14" fill="#d9e5de"/>
+  <path d="M390 205h70M512 189h70M640 206h42M741 190h102" stroke="#29483b" stroke-width="8" stroke-linecap="round"/>
+  <rect x="375" y="281" width="84" height="95" rx="14" fill="#c7d7cd"/>
+  <rect x="477" y="296" width="133" height="80" rx="14" fill="#e99a50"/>
+  <rect x="630" y="272" width="103" height="104" rx="14" fill="#d9e5de"/>
+  <rect x="754" y="291" width="112" height="85" rx="14" fill="#e99a50"/>
+  <path d="M392 319h50M496 337h95M650 310h62M774 326h72" stroke="#29483b" stroke-width="8" stroke-linecap="round"/>
+  <rect x="376" y="408" width="152" height="84" rx="14" fill="#e99a50"/>
+  <rect x="548" y="424" width="111" height="68" rx="14" fill="#d9e5de"/>
+  <rect x="681" y="404" width="184" height="88" rx="14" fill="#c7d7cd"/>
+  <path d="M397 450h110M568 456h72M702 437h142" stroke="#29483b" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">S’informer pendant une crise sans Internet</title>
+  <desc id="desc">Radio portable à piles à côté d’une lampe et d’un carnet où noter les fréquences locales.</desc>
+  <rect width="1200" height="630" rx="28" fill="#103434"/>
+  <circle cx="870" cy="310" r="250" fill="#174542"/>
+  <path d="M290 475h620l-42 58H335z" fill="#29483b"/>
+  <rect x="360" y="226" width="440" height="250" rx="30" fill="#f4f1e8"/>
+  <rect x="397" y="267" width="229" height="158" rx="18" fill="#c7d7cd"/>
+  <path d="M423 393c30-61 57 12 86-31s55 39 86-18" fill="none" stroke="#29483b" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="703" cy="301" r="20" fill="#e99a50"/>
+  <circle cx="703" cy="368" r="20" fill="#8eaa9a"/>
+  <path d="M520 225 605 92" stroke="#f4f1e8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M583 105c50-36 111-26 145 9M598 131c32-22 70-16 94 7" fill="none" stroke="#e99a50" stroke-width="9" stroke-linecap="round"/>
+  <rect x="850" y="316" width="155" height="168" rx="18" fill="#e99a50"/>
+  <path d="M878 345h99M878 375h99M878 405h78M878 435h90" stroke="#29483b" stroke-width="8" stroke-linecap="round"/>
+  <rect x="224" y="374" width="68" height="112" rx="18" fill="#c7d7cd"/>
+  <path d="M240 374v-24a18 18 0 0 1 36 0v24" fill="none" stroke="#c7d7cd" stroke-width="9"/>
+  <path d="M257 398v44" stroke="#e99a50" stroke-width="10" stroke-linecap="round"/>
+</svg>
