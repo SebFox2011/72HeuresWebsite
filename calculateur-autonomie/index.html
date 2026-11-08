@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculer mes besoins d’autonomie à domicile | 72 Heures</title>
+  <meta name="description" content="Estimez les besoins en eau potable et en énergie alimentaire de votre foyer pour 3, 21 ou 90 jours à domicile.">
+  <link rel="canonical" href="https://72heures.eu/calculateur-autonomie/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculer mes besoins d’autonomie à domicile | 72 Heures">
+  <meta property="og:description" content="Un calculateur gratuit pour estimer l’eau potable et l’énergie alimentaire de votre foyer à domicile.">
+  <meta property="og:url" content="https://72heures.eu/calculateur-autonomie/">
+  <meta property="og:image" content="https://72heures.eu/assets/icon-only.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculer mes besoins d’autonomie à domicile | 72 Heures">
+  <meta name="twitter:description" content="Estimez les besoins en eau potable et en énergie alimentaire de votre foyer pour 3, 21 ou 90 jours à domicile.">
+  <meta name="twitter:image" content="https://72heures.eu/assets/icon-only.png">
+  <link rel="icon" type="image/png" href="/assets/icon-only.png">
+  <link rel="stylesheet" href="/assets/blog.css">
+  <style>
+    .tool-page { max-width: 900px; }
+    .tool-header { margin-bottom: 30px; }
+    .tool-header h1 { margin: 8px 0 14px; font-size: clamp(38px, 7vw, 58px); line-height: 1.08; letter-spacing: -.05em; }
+    .tool-header p:last-child { max-width: 720px; color: var(--muted); font-size: 18px; }
+    .tool-panel, .result-panel, .checklist-panel, .limits-panel { padding: clamp(22px, 4vw, 34px); border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
+    .tool-panel h2, .result-panel h2, .checklist-panel h2, .limits-panel h2 { margin: 0 0 12px; font-size: 25px; line-height: 1.25; }
+    .tool-panel > p, .limits-panel p { color: #455e53; }
+    .input-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+    .field label { display: block; margin-bottom: 7px; font-weight: 800; }
+    .field input, .field select { width: 100%; min-height: 50px; padding: 10px 12px; border: 1px solid #8fa99b; border-radius: 10px; background: white; color: var(--ink); font: inherit; }
+    .field input:focus-visible, .field select:focus-visible, .calculate-button:focus-visible, .check-item input:focus-visible, .site-nav a:focus-visible, .site-footer a:focus-visible { outline: 3px solid #a45b23; outline-offset: 3px; }
+    .calculate-button { min-height: 50px; padding: 12px 18px; border: 0; border-radius: 11px; background: var(--forest); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+    .calculate-button:hover { background: #194b45; }
+    .form-message { margin: 14px 0 0; padding: 12px 14px; border-left: 4px solid #a45b23; background: #fff2e7; color: #56331c; }
+    .result-panel { margin-top: 24px; background: #eef4ef; }
+    .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 18px 0; }
+    .result-card { padding: 18px; border-radius: 14px; background: white; }
+    .result-card h3 { margin: 0 0 8px; font-size: 16px; }
+    .result-value { display: block; color: var(--forest); font-size: clamp(27px, 5vw, 38px); font-weight: 900; line-height: 1.15; }
+    .result-note, .small-note { color: var(--muted); font-size: 14px; }
+    .checklist-panel, .limits-panel { margin-top: 24px; }
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .check-item { display: flex; align-items: flex-start; gap: 10px; color: #455e53; }
+    .check-item input { width: 20px; height: 20px; flex: 0 0 auto; margin: 2px 0 0; accent-color: var(--forest); }
+    .limits-panel ul { padding-left: 22px; color: #455e53; }
+    .site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+    @media (max-width: 640px) {
+      .input-grid, .result-grid, .checklist { grid-template-columns: 1fr; }
+      .tool-header h1 { font-size: 42px; }
+      .calculate-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-nav">
+      <a class="brand" href="/" aria-label="72 Heures, accueil"><b>72</b> HEURES</a>
+      <nav aria-label="Navigation principale">
+        <a href="/">Accueil</a>
+        <a href="/blog/">Blog</a>
+        <a href="/calculateur-autonomie/" aria-current="page">Calculateur</a>
+        <a class="nav-cta" href="/#projet">Découvrir l’application</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap tool-page">
+    <nav class="breadcrumbs" aria-label="Fil d’Ariane"><a href="/">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Calculateur d’autonomie</span></nav>
+    <header class="tool-header">
+      <p class="eyebrow">Outil gratuit · scénario à domicile</p>
+      <h1>Calculer mes besoins d’autonomie</h1>
+      <p>Estimez une quantité d’eau potable pour boire et un repère d’énergie alimentaire pour votre foyer, sur 3, 21 ou 90 jours.</p>
+    </header>
+
+    <section class="tool-panel" aria-labelledby="calculator-title">
+      <h2 id="calculator-title">Composition du foyer et durée</h2>
+      <p>Les valeurs sont calculées dans votre navigateur. Elles ne sont ni envoyées ni enregistrées.</p>
+      <div class="input-grid" role="group" aria-label="Paramètres du calcul">
+        <div class="field">
+          <label for="adults">Nombre d’adultes</label>
+          <input id="adults" name="adults" type="number" min="0" step="1" value="1" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="children">Nombre d’enfants</label>
+          <input id="children" name="children" type="number" min="0" step="1" value="0" inputmode="numeric" required>
+        </div>
+        <div class="field">
+          <label for="days">Durée</label>
+          <select id="days" name="days">
+            <option value="3">3 jours</option>
+            <option value="21">21 jours</option>
+            <option value="90">90 jours</option>
+          </select>
+        </div>
+      </div>
+      <button class="calculate-button" id="calculate" type="button">Calculer mes besoins</button>
+      <p class="form-message" id="form-message" role="alert" hidden></p>
+    </section>
+
+    <section class="result-panel" id="results" aria-labelledby="results-title" aria-live="polite" hidden>
+      <h2 id="results-title">Estimation pour votre foyer</h2>
+      <p id="result-summary"></p>
+      <div class="result-grid">
+        <article class="result-card">
+          <h3>Eau potable estimée <span class="small-note">(boisson)</span></h3>
+          <output class="result-value" id="water-result"></output>
+          <p class="result-note">Ce volume ne couvre pas la cuisine ni l’hygiène.</p>
+        </article>
+        <article class="result-card">
+          <h3>Énergie alimentaire estimée</h3>
+          <output class="result-value" id="energy-result"></output>
+          <p class="result-note">Un repère en kilocalories (kcal), pas un nombre de repas.</p>
+        </article>
+      </div>
+      <p class="small-note">Ces résultats appliquent les hypothèses indiquées ci-dessous ; ils ne constituent pas une prescription nutritionnelle ou sanitaire.</p>
+    </section>
+
+    <section class="checklist-panel" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">Checklist des équipements essentiels</h2>
+      <p class="small-note">Cochez les éléments déjà prêts. La liste n’est pas classée par priorité selon la durée ; les cases ne sont pas mémorisées.</p>
+      <p class="small-note">Pour les recommandations officielles sur le kit d’urgence, consultez la <a href="https://www.securite-civile.interieur.gouv.fr/reagir/comment-se-preparer-face-aux-risques/kit-durgence" target="_blank" rel="noopener noreferrer">Sécurité civile</a>.</p>
+      <ul class="checklist">
+        <li><label class="check-item"><input type="checkbox">Eau potable en réserve</label></li>
+        <li><label class="check-item"><input type="checkbox">Aliments non périssables</label></li>
+        <li><label class="check-item"><input type="checkbox">Radio autonome et piles de rechange</label></li>
+        <li><label class="check-item"><input type="checkbox">Lampe et piles ou source d’énergie de rechange</label></li>
+        <li><label class="check-item"><input type="checkbox">Trousse de premiers secours et traitements habituels</label></li>
+        <li><label class="check-item"><input type="checkbox">Chargeur de téléphone et batterie externe</label></li>
+        <li><label class="check-item"><input type="checkbox">Documents essentiels protégés</label></li>
+        <li><label class="check-item"><input type="checkbox">Argent liquide et double des clés</label></li>
+        <li><label class="check-item"><input type="checkbox">Vêtements chauds et couvertures</label></li>
+      </ul>
+    </section>
+
+    <section class="limits-panel" aria-labelledby="method-title">
+      <h2 id="method-title">Comment lire cette estimation</h2>
+      <ul>
+        <li><strong>Eau potable :</strong> 2 litres × (adultes + enfants) × jours. Cette estimation concerne l’eau de boisson uniquement ; elle ne couvre ni la cuisine ni l’hygiène.</li>
+        <li><strong>Énergie alimentaire :</strong> (2&nbsp;400 kcal × adultes + 1&nbsp;800 kcal × enfants) × jours. Le résultat est une quantité totale indicative d’énergie alimentaire, jamais un nombre de repas.</li>
+        <li>Le calcul applique le même repère à chaque adulte et à chaque enfant, sans connaître l’âge, l’activité, la santé ou les besoins individuels. Les besoins réels peuvent varier.</li>
+        <li>L’outil concerne uniquement une préparation à domicile. Il ne remplace pas les consignes des autorités, ni un avis médical ou nutritionnel.</li>
+      </ul>
+    </section>
+
+    <aside class="app-cta">
+      <h2>Suivre les stocks réels du foyer</h2>
+      <p>Le calcul donne un repère de départ. L’application 72 Heures permet d’organiser et suivre les stocks et leurs dates importantes.</p>
+      <a href="/#projet">Découvrir le suivi des stocks dans 72 Heures</a>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-nav"><a class="brand" href="/"><b>72</b> HEURES</a><span>© 2026 • 72heures.eu</span><a href="/confidentialite/">Confidentialité</a><a href="/suppression-compte/">Suppression du compte</a></div>
+    <p>Les consignes des autorités priment toujours. <a href="/">Découvrir 72 Heures</a></p>
+  </footer>
+
+  <script>
+    function calculateNeeds(adults, children, days) {
+      if (![adults, children, days].every(Number.isSafeInteger) || adults < 0 || children < 0 || ![3, 21, 90].includes(days)) {
+        throw new Error('Saisissez des nombres entiers valides et choisissez une durée proposée.');
+      }
+      const people = adults + children;
+      if (!Number.isSafeInteger(people) || people < 1) {
+        throw new Error('Le foyer doit comprendre au moins un adulte ou un enfant.');
+      }
+      const waterLiters = 2 * people * days;
+      const foodKcal = (2400 * adults + 1800 * children) * days;
+      if (!Number.isSafeInteger(waterLiters) || !Number.isSafeInteger(foodKcal)) {
+        throw new Error('Les valeurs saisies dépassent la plage de calcul exacte.');
+      }
+      return { people, days, waterLiters, foodKcal };
+    }
+
+    const adultsInput = document.getElementById('adults');
+    const childrenInput = document.getElementById('children');
+    const daysInput = document.getElementById('days');
+    const calculateButton = document.getElementById('calculate');
+    const message = document.getElementById('form-message');
+    const results = document.getElementById('results');
+    const numberFormat = new Intl.NumberFormat('fr-FR');
+
+    function clearPreviousResult() {
+      message.hidden = true;
+      results.hidden = true;
+    }
+
+    [adultsInput, childrenInput, daysInput].forEach((input) => {
+      input.addEventListener('input', clearPreviousResult);
+      input.addEventListener('change', clearPreviousResult);
+    });
+
+    calculateButton.addEventListener('click', () => {
+      clearPreviousResult();
+      if (!adultsInput.reportValidity()) return;
+      if (!childrenInput.reportValidity()) return;
+
+      try {
+        const estimate = calculateNeeds(Number(adultsInput.value), Number(childrenInput.value), Number(daysInput.value));
+        document.getElementById('result-summary').textContent = `${numberFormat.format(estimate.people)} personne${estimate.people > 1 ? 's' : ''} · ${numberFormat.format(estimate.days)} jours · domicile`;
+        document.getElementById('water-result').textContent = `${numberFormat.format(estimate.waterLiters)} L`;
+        document.getElementById('energy-result').textContent = `${numberFormat.format(estimate.foodKcal)} kcal`;
+        results.hidden = false;
+      } catch (error) {
+        message.textContent = error.message;
+        message.hidden = false;
+        adultsInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
