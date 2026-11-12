@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>72 Heures — Kit d’urgence 72 h et autonomie familiale</title>
     <meta name="description"
-        content="72 Heures aide les foyers à préparer et maintenir leurs réserves essentielles, à domicile comme en évacuation. Disponible sur iOS, Android bientôt disponible.">
+        content="72 Heures aide les foyers à préparer et maintenir leurs réserves essentielles, à domicile comme en évacuation. Disponible sur iOS et Android.">
     <link rel="canonical" href="https://72heures.eu/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="72 Heures — Kit d’urgence 72 h et autonomie familiale">
@@ -248,16 +248,27 @@
         }
 
         .download-block {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            max-width: 560px;
             margin-top: 16px
+        }
+
+        .store-download {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid rgba(41, 72, 59, .14);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .72)
         }
 
         .download-qr {
             display: block;
-            flex: 0 0 120px;
+            flex: 0 0 96px;
             padding: 5px;
             border-radius: 12px;
             background: #fff;
@@ -278,6 +289,7 @@
 
         .download-details {
             display: flex;
+            min-width: 0;
             flex-direction: column;
             align-items: flex-start;
             gap: 6px
@@ -292,13 +304,9 @@
             font-size: 14px
         }
 
-        .download-block .android-status {
-            font-size: 12px
-        }
-
-        .android-status {
+        .download-caption {
             color: var(--muted);
-            font-size: 13px
+            font-size: 12px
         }
 
         .app-visual {
@@ -710,11 +718,12 @@
 
         @media(max-width:767px) {
             .download-block {
+                grid-template-columns: 1fr;
                 margin-top: 14px
             }
 
             .download-qr {
-                display: none
+                flex-basis: 92px
             }
         }
 
@@ -759,16 +768,30 @@
                     réserves essentielles, à domicile comme dans votre sac d’évacuation.</p>
                 <div class="actions"><a class="btn" href="#projet">Découvrir le projet</a><a class="btn secondary"
                         href="#fonctionnalites">Voir les fonctionnalités</a></div>
-                <div class="download-block" aria-label="Télécharger 72 Heures">
-                    <a class="download-qr" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
-                        target="_blank" rel="noopener noreferrer" aria-label="Ouvrir l’App Store avec le QR code de 72 Heures">
-                        <img src="assets/72heures-appstore-qr.svg"
-                            alt="QR code pour télécharger 72 Heures sur l’App Store">
-                    </a>
-                    <div class="download-details">
-                        <a class="btn download-link" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
-                            target="_blank" rel="noopener noreferrer">Télécharger sur l’App Store</a>
-                        <span class="android-status">Android — Bientôt disponible</span>
+                <div class="download-block" role="group" aria-label="Télécharger 72 Heures">
+                    <div class="store-download">
+                        <a class="download-qr" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
+                            target="_blank" rel="noopener noreferrer" aria-label="Ouvrir l’App Store avec le QR code de 72 Heures">
+                            <img src="assets/72heures-appstore-qr.svg"
+                                alt="QR code pour télécharger 72 Heures sur l’App Store">
+                        </a>
+                        <div class="download-details">
+                            <span class="download-caption">iPhone et iPad</span>
+                            <a class="btn download-link" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
+                                target="_blank" rel="noopener noreferrer">Télécharger sur l’App Store</a>
+                        </div>
+                    </div>
+                    <div class="store-download">
+                        <a class="download-qr" href="https://play.google.com/store/apps/details?id=fr.heures72.app"
+                            target="_blank" rel="noopener noreferrer" aria-label="Ouvrir Google Play avec le QR code de 72 Heures">
+                            <img src="assets/72heures-googleplay-qr.svg"
+                                alt="QR code pour télécharger 72 Heures sur Google Play">
+                        </a>
+                        <div class="download-details">
+                            <span class="download-caption">Android</span>
+                            <a class="btn download-link" href="https://play.google.com/store/apps/details?id=fr.heures72.app"
+                                target="_blank" rel="noopener noreferrer">Télécharger sur Google Play</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -914,10 +937,11 @@
     </section>
     <section id="suivre" class="cta">
         <div class="wrap">
-            <h2>72 Heures est disponible sur iOS</h2>
+            <h2>72 Heures est disponible sur iOS et Android</h2>
             <p><a class="btn" href="https://apps.apple.com/fr/app/72-heures/id6820067592"
                 target="_blank" rel="noopener noreferrer">Télécharger sur l’App Store</a></p>
-            <p class="android-status" style="margin-top:12px">Android — Bientôt disponible</p>
+            <p style="margin-top:12px"><a class="btn" href="https://play.google.com/store/apps/details?id=fr.heures72.app"
+                target="_blank" rel="noopener noreferrer">Télécharger sur Google Play</a></p>
         </div>
     </section>
     <section class="social-section" aria-labelledby="social-section-title">
